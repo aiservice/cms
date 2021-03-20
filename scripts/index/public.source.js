@@ -55,7 +55,8 @@ function showNotice() {
 }
 
 function isMobile() {
-    return ua().match(/iphone|ipad|ipod|android|blackberry|iemobile|wpdesktop/i)
+    // return ua().match(/iphone|ipad|ipod|android|blackberry|iemobile|wpdesktop/i)
+    return /iphone|ipad|ipod|android|blackberry|iemobile|wpdesktop/i.test(ua())
 }
 
 function ua() {
@@ -135,22 +136,30 @@ function loadGoogleAdsRecommend() {
 }
 
 function loadBaiduAds(loc) {
-    var tmpId = b_data_ad_mobile;
-    if ((loc === "cms_left_bottom" && !isMobile())) {
-        tmpId = b_data_ad_336;
+    var id = "ads_iframe_" + loc;
+    var w = 336;
+    var h = 280;
+    if (isMobile()) {
+        w = document.body.clientWidth - 30;
+        h = w * (6 / 20);
     }
-    if (loc === "cms_right_bottom") {
-        tmpId = b_data_ad_336_xuanting;
-    }
-    (function () {
-        var s = "_" + Math.random().toString(36).slice(2);
-        document.write('<div style="" id="' + s + '"></div>');
-        (window.slotbydup = window.slotbydup || []).push({
-            id: tmpId,
-            container: s
-        });
-    })();
-    document.write('<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script>');
+    document.write('<div> <iframe id="' + id + '" src="//baidu.chinaoc.com.cn" style="width: ' + w + 'px; border: none; height: ' + h + 'px;"></iframe></div>');
+    // var tmpId = b_data_ad_mobile;
+    // if ((loc === "cms_left_bottom" && !isMobile())) {
+    //     tmpId = b_data_ad_336;
+    // }
+    // if (loc === "cms_right_bottom") {
+    //     tmpId = b_data_ad_336_xuanting;
+    // }
+    // (function () {
+    //     var s = "_" + Math.random().toString(36).slice(2);
+    //     document.write('<div style="" id="' + s + '"></div>');
+    //     (window.slotbydup = window.slotbydup || []).push({
+    //         id: tmpId,
+    //         container: s
+    //     });
+    // })();
+    // document.write('<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script>');
 }
 
 function loadOther() {
@@ -394,31 +403,6 @@ function loadAlimama(loc) {
     var w = 336;
     var h = 280;
     document.write('<div> <iframe id="' + id + '" src="//cdn.cms.moujishu.com/ads.html?loc=' + loc + '&id=' + id + '&w=' + w + '&h=' + h + '" style="width: ' + w + 'px; border: none; height: ' + h + 'px;"></iframe></div>');
-}
-
-function loadAlimamaTemplate(id) {
-    if (typeof id != "undefined" || id != "") {
-        var opacity = "";
-        if (typeof third_opacity_css != "undefined") {
-            opacity = third_opacity_css;
-        }
-        ufid = id;
-        ufwidth = 336;
-        ufheight = 280;
-        ufdomain = "//js.penxiangge.com";
-        document.write('<div style="' + opacity + '">');
-        document.write("<scr" + "ipt type='text/javascript' src='" + ufdomain + "/Include/data_hf'></scri" + "pt>");
-        document.write('</div>');
-        // document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
-        // tanx_s = document.createElement("script");
-        // tanx_s.type = "text/javascript";
-        // tanx_s.charset = "gbk";
-        // tanx_s.id = "tanx-s-"+id;
-        // tanx_s.async = true;
-        // tanx_s.src = "//p.tanx.com/ex?i="+id;
-        // tanx_h = document.getElementsByTagName("head")[0];
-        // if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
-    }
 }
 
 function formatDate() {
