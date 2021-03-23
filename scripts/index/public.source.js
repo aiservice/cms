@@ -136,30 +136,22 @@ function loadGoogleAdsRecommend() {
 }
 
 function loadBaiduAds(loc) {
-    var id = "ads_iframe_" + loc;
-    var w = 336;
-    var h = 280;
-    if (isMobile()) {
-        w = document.body.clientWidth - 30;
-        h = w * (6 / 20);
+    var tmpId = b_data_ad_mobile;
+    if ((loc === "cms_left_bottom" && !isMobile())) {
+        tmpId = b_data_ad_336;
     }
-    document.write('<div> <iframe id="' + id + '" src="//baidu.chinaoc.com.cn" style="width: ' + w + 'px; border: none; height: ' + h + 'px;"></iframe></div>');
-    // var tmpId = b_data_ad_mobile;
-    // if ((loc === "cms_left_bottom" && !isMobile())) {
-    //     tmpId = b_data_ad_336;
-    // }
-    // if (loc === "cms_right_bottom") {
-    //     tmpId = b_data_ad_336_xuanting;
-    // }
-    // (function () {
-    //     var s = "_" + Math.random().toString(36).slice(2);
-    //     document.write('<div style="" id="' + s + '"></div>');
-    //     (window.slotbydup = window.slotbydup || []).push({
-    //         id: tmpId,
-    //         container: s
-    //     });
-    // })();
-    // document.write('<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script>');
+    if (loc === "cms_right_bottom") {
+        tmpId = b_data_ad_336_xuanting;
+    }
+    (function () {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: tmpId,
+            container: s
+        });
+    })();
+    document.write('<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script>');
 }
 
 function loadOther() {
