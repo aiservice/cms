@@ -1,6 +1,6 @@
 var app_domain = "www.wuxiaworld.link";var is_english = false;var site_id = 1970;var book_total_fee = "1.0";var baid = "30ec17690bab5fd3e57376262c00854b";var gaid = "UA-40716497-5";
 b_data_ad_mobile = "u3689760";
-var link_email = "2482232786@qq.com";
+var link_email = "1740933979@qq.com";
 b_data_ad_336 = "u3689763";
 b_data_ad_336_xuanting = "u3689796";
 

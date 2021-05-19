@@ -1,4 +1,4 @@
-var app_domain = "www.shitou.club";var is_english = false;var site_id = 1969;var book_total_fee = 0.5;var audio_total_fee = 0.5;var baid = "3177c2f5182865bc5a369f903245165c";b_data_ad_mobile = "u3689760";
+var app_domain = "www.shitou.club";var is_english = false;var site_id = 1969;var book_total_fee = 0.5;var audio_total_fee = 0.5;var baid = "d4381f1967a26d1e3d5dcf319d4f0848";b_data_ad_mobile = "u3689760";
 var link_email = "shitou@shitou.club";b_data_ad_336 = "u3689763";
 b_data_ad_336_xuanting = "u3689796";
 

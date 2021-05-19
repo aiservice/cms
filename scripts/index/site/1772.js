@@ -1,4 +1,4 @@
-var app_domain = "www.xiaolipan.com";var is_english = false;var site_id = 1772;var book_total_fee = "1.0";var baid = "0f90217102126a4a3246240e645d07a0";var gaid = "UA-40716497-22";b_data_ad_mobile = "u3689760";
+var app_domain = "www.xiaolipan.com";var is_english = false;var site_id = 1772;var book_total_fee = "1.0";var baid = "154ebbb9e25e9d0a46ae8795068befb2";var gaid = "UA-40716497-22";b_data_ad_mobile = "u3689760";
 var link_email = "xiaolipan7@gmail.com";var link_tg = "https://t.me/aikefu";
 b_data_ad_336 = "u3689763";
 b_data_ad_336_xuanting = "u3689796";
