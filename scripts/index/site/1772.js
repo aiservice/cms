@@ -7,7 +7,7 @@ g_data_ad_slot_auto = "2215424712";
 g_data_ad_slot_recommend = "6053545297";
 g_data_ad_client = "ca-pub-4603891518763240";
 
-filterUrls = ["1385981","1407208"];
+filterUrls = ["1407208.html","cls/9327.html","1900686.html"];
 siteGUrls = ["aiis","good","china","shitou","soft","xiaoli","6tie","lzys","feiku","biquge","ppt","toutiao"];
 siteBUrls = ["aiis","china"];
 
