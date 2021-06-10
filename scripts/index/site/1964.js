@@ -6,7 +6,7 @@ g_data_ad_slot_auto = "2215424712";
 g_data_ad_slot_recommend = "6053545297";
 g_data_ad_client = "ca-pub-4603891518763240";
 
-filterUrls = ["2125941.html"];
+filterUrls = ["2125941.html","45997.html"];
 siteGUrls = ["toutiao"];
 siteBUrls = ["aiis","china"];
 
