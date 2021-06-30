@@ -64,7 +64,11 @@ function ua() {
 }
 
 function isWechat() {
-    return ua().match(/micromessenger/i);
+    return /micromessenger/i.test(ua())
+}
+
+function isBot() {
+    return /baiduspider|googlebot|bingbot|web-crawler|grapeshotcrawler|liebaofast|adsbot/i.test(ua())
 }
 
 function gEnabledAds(url) {
