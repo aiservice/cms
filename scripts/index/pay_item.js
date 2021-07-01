@@ -39,13 +39,23 @@ $(function () {
     if (pu) {
         $("#add_modal").modal('show');
     }
+    if (url.indexOf(filterUrls[i]) !== -1) {
+        return false;
+    }
     loadWeChatTip();
 });
 
 function submitForm() {
     if (vform.form()) {
-        $("#pdName").val($("#priceType").find("option:selected").text())
+        $("#pdName").val($("#priceType").find("option:selected").text());
         ajax("/pay-item.html?method=submit", fromId, "POST", successHandle, true, true)
+    }
+}
+
+function submitInvitationCodeForm() {
+    if (vform.form()) {
+        $("#pdName").val($("#priceType").find("option:selected").text());
+        ajax("/pay-item.html?method=submitInvitationCode", fromId, "POST", successHandle, true, true)
     }
 }
 
@@ -68,25 +78,26 @@ function cPay() {
 
 function loadWeChatTip() {
     var cur_location_url = window.location.href;
-    if (isWechat() && cur_location_url.indexOf("alipay") !== -1) {
-        var cdnTemp = "";
-        if (typeof cdn != "undefined") {
-            cdnTemp = cdn;
+    if (cur_location_url.indexOf("alipay") !== -1) {
+        if (isWechat()) {
+            var cdnTemp = "";
+            if (typeof cdn != "undefined") {
+                cdnTemp = cdn;
+            }
+            var img = cdnTemp + "/styles/mall/img/wechat_android.png";
+            var tip = "使用浏览器打开";
+            if (isIOS()) {
+                img = cdnTemp + "/styles/mall/img/wechat_iphone.png";
+                tip = "在 Safari 中打开";
+            }
+            var html = "<div id=\"wechat\" style=\"margin: 0 auto; display: table; width: 85%; text-align: center; font-family: 'ciscosansthin', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px;\"> <div> <p class=\"step1\" style=\"margin: 32px 0;\"><span>1. 点击右上角的<strong>更多</strong>菜单。</span></p> </div> <div> <p class=\"step2\" style=\"margin-bottom: 32px;\"><span>2. 点击<strong>" + tip + "</strong>以完成支付。</span></p> <img src=\"" + img + "\"/> </div> </div>";
+            $("body").append(html);
+            $("#main-container").hide();
+        } else {
+            $("#main-container").show();
+            getOrder()
         }
-        var img = cdnTemp + "/styles/mall/img/wechat_android.png";
-        var tip = "使用浏览器打开";
-        if (isIOS()) {
-            img = cdnTemp + "/styles/mall/img/wechat_iphone.png";
-            tip = "在 Safari 中打开";
-        }
-        var html = "<div id=\"wechat\" style=\"margin: 0 auto; display: table; width: 85%; text-align: center; font-family: 'ciscosansthin', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px;\"> <div> <p class=\"step1\" style=\"margin: 32px 0;\"><span>1. 点击右上角的<strong>更多</strong>菜单。</span></p> </div> <div> <p class=\"step2\" style=\"margin-bottom: 32px;\"><span>2. 点击<strong>" + tip + "</strong>以完成支付。</span></p> <img src=\"" + img + "\"/> </div> </div>";
-        $("body").append(html);
-        $("#main-container").hide();
-    } else {
-        $("#main-container").show();
-        getOrder()
     }
-
 }
 
 function getOrder() {

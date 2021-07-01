@@ -175,6 +175,13 @@ function toDelete(id) {
     }, "确定要删除此信息吗？", "删除")
 }
 
+function refreshAdsCache() {
+    myConfirm(function () {
+        ajax("?method=refreshAdsCache", {}, "POST", "", true, true)
+    }, "确定更新广告缓存吗？")
+}
+
+
 function DeleteAll() {
     var ids = getIdSelections($table);
     if (ids && ids.length > 0) {

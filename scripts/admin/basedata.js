@@ -7,6 +7,10 @@ columns_table.push({
     shown: true, type: 'input', child_type: 'hidden'
 });
 columns_table.push({
+    title: 'MOD_ID', field: 'mod_id', visible: false,
+    shown: true, type: 'input', child_type: 'hidden'
+});
+columns_table.push({
     title: 'TYPE', field: 'type', visible: false,
     shown: true, type: 'input', child_type: 'hidden'
 });
@@ -19,7 +23,7 @@ columns_table.push({
 });
 columns_table.push({
     title: 'URL', field: 'type_url', align: 'center', class: 'hidden-480',
-    shown: true, type: 'input', child_type: 'text', required: true, maxlength: 128
+    shown: true, type: 'input', child_type: 'text', required: true, maxlength: 256
 });
 columns_table.push({
     title: '备注', field: 'remark', align: 'center', class: "w400", formatter: "remarkFormatter",
@@ -39,11 +43,13 @@ columns_table.push({
 columns_table.push({title: '操作', align: 'center', class: "action1", formatter: "operateFormatter"});
 var vform;
 var $table;
+var base_data_type;
+var mod_id;
 $(function () {
     var tableTmp = $("#data-table");
-    var type = tableTmp.data("type");
-    var mod_id = tableTmp.data("mod_id");
-    $table = initTable(columns_table, "?method=listAjax&type=" + type, "data-table", 25);
+    base_data_type = tableTmp.data("type");
+    mod_id = tableTmp.data("mod-id");
+    $table = initTable(columns_table, "?method=listAjax&type=" + base_data_type, "data-table", 25);
     $table.on("load-success.bs.table", function (row, event) {
         $('[data-toggle="tooltip"]').tooltip()
     });
@@ -151,6 +157,16 @@ function nameFormatter(value, row, index) {
 }
 
 function toAdd() {
+    debugger
+    $.each(columns_table, function (i, columns) {
+        if (columns.field === "mod_id") {
+            columns.value = mod_id;
+        } else if (columns.field === "type") {
+            columns.value = base_data_type;
+        } else {
+            columns.value = "";
+        }
+    });
     buildForm('container_data_lg', columns_table);
     $("#add_modal").modal({backdrop: true, keyboard: true, show: true});
 }
