@@ -1,5 +1,5 @@
 /*!
  * Powered by uglifiyJS v2.6.1, Build by http://www.ossoft.cn
- * build time: Thu Jul 01 2021 10:18:31 GMT+0800 (China Standard Time)
+ * build time: Sat Jul 03 2021 10:25:21 GMT+0800 (China Standard Time)
 */
-function loadJs(e){if("undefined"!=typeof site_id&&1919===site_id){var d="http://zan.igoodtv.com",a="\u4e07\u9996\u8d5e\u7f8e\u8bd7\u6b4c";document.writeln('<div class="panel panel-info"> <div class="panel-heading"> <h3 class="panel-title">\u597d\u6d88\u606f\uff1a</h3> </div> <div class="panel-body"> <a href="'+d+'" target="_blank">\u8d5e\u7f8e\u8bd7\u6b4c\u7f51</a>\u5df2\u4e0a\u7ebf\uff0c\u63d0\u4f9b\u9ad8\u6e05\u7684\u8d5e\u7f8e\u8bd7\u6b4cMP4\u89c6\u9891\uff0c\u8bf7\u8d76\u5feb\u4e0b\u8f7d:<a href="'+d+'" target="_blank"><code>'+a+"</code></a>\uff0c\u9632\u6b62\u8d44\u6e90\u5931\u6548\uff01 </div> </div>")}document.write('<div class="addthis_inline_share_toolbox"></div>'),setTimeout(function(){!function(){var d=document,a=d.createElement("script");a.src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-"+e,(d.head||d.body).appendChild(a)}()},3e3)}loadJs("5ca402b6fcd37c0e");
+function loadJs(d){document.write('<div class="addthis_inline_share_toolbox"></div>'),setTimeout(function(){!function(){var e=document,i=e.createElement("script");i.src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-"+d,(e.head||e.body).appendChild(i)}()},3e3)}loadJs("5ca402b6fcd37c0e");
