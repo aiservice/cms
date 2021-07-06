@@ -39,9 +39,6 @@ $(function () {
     if (pu) {
         $("#add_modal").modal('show');
     }
-    if (url.indexOf(filterUrls[i]) !== -1) {
-        return false;
-    }
     loadWeChatTip();
 });
 
