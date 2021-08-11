@@ -157,7 +157,7 @@ function siteDomainFormatter(value, row, index) {
 }
 
 function siteRankFormatter(value, row, index) {
-    var rank = "<img src='https://cdn.jsdelivr.net/gh/aiservice/cdn/cms/images/baiduapp/" + row.site_rank + ".png'>";
+    var rank = "<img src='https://cdn.jsdelivr.net/gh/aiservice/cms@latest/images/baiduapp/" + row.site_rank + ".png'>";
     var seoHtml = "百度收录：" + row.site_in_num;
     return "<span data-toggle=\"tooltip\" data-placement=\"top\" data-html=\"true\" title=\"" + seoHtml + "\">" + rank + "</span>";
 }
