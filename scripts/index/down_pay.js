@@ -37,6 +37,9 @@ function noSourceHtml() {
         if (site_id === 1937) {
             durl = "https://72k.us/file/1210232-461016633";
         }
+        if (site_id === 1911) {
+            durl = "https://72k.us/f/1210232-516097371-233bbe";
+        }
     }
     var downPayParams = {
         id: "1",
