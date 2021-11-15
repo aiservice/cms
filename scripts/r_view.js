@@ -3,7 +3,7 @@ var count_view = 0;
 window.img_array_list = new Array();
 window.img_array_view = new Array();
 // $("img").error(function () {
-//     $(this).attr("src", "/images/no_img.png");
+//     $(this).attr("src", "https://img.gejiba.com/images/25fafa73c8d7455f216536623ad10c85.png");
 // });
 $("img").on('error', function () {
     $(this).attr("src", "https://pic.imgdb.cn/item/6191c4042ab3f51d9105dfde.png");
@@ -42,24 +42,9 @@ function hotlinkview(cls) {
         }
         if (src) {
             if (src.indexOf("mmbiz.") !== -1) {
-                //img.attr("src","//images.weserv.nl/?url="+src);
-                var ifr = create_img_iframeview(src, wd);
-                img.hide();
-                img.after(ifr);
-                img.remove();
-            }
-            // else if (src.indexOf("tiebapic.baidu.com") !== -1) {
-            //     img.attr("src", src.replace("tiebapic.baidu.com", "cdn.tieba.moujishu.com"));
-            // }
-            // else if (src.indexOf("imgsrc.baidu.com") !== -1) {
-            //     img.attr("src",src.replace("imgsrc.baidu.com", "cdn.baidu.moujishu.com"));
-            // }
-            else if (src.indexOf("sinaimg.cn") !== -1) {
+                img.attr("src", "//images.weserv.nl/?url=" + src);
+            } else if (src.indexOf("sinaimg.cn") !== -1) {
                 img.attr("src", "//images.weserv.nl/?url=" + src).removeAttr("data-src");
-                // var cur_host = getHostName(src);
-                // var src_tmp = src.replace(cur_host, "cdn.sina.moujishu.com");
-                // src_tmp = src_tmp.replace("https://", "//");
-                // img.attr("src", src_tmp).removeAttr("data-src");
             }
         }
     });
