@@ -6,7 +6,7 @@ window.img_array_view = new Array();
 //     $(this).attr("src", "/images/no_img.png");
 // });
 $("img").on('error', function () {
-    $(this).attr("src", "/images/no_img.png");
+    $(this).attr("src", "https://p26.toutiaoimg.com/origin/pgc-image/1c8ee9086fb54f68894ab63f8251f258");
 });
 
 hotlinkview("wechat-view");
@@ -55,10 +55,11 @@ function hotlinkview(cls) {
             //     img.attr("src",src.replace("imgsrc.baidu.com", "cdn.baidu.moujishu.com"));
             // }
             else if (src.indexOf("sinaimg.cn") !== -1) {
-                var cur_host = getHostName(src);
-                var src_tmp = src.replace(cur_host, "cdn.sina.moujishu.com");
-                src_tmp = src_tmp.replace("https://", "//");
-                img.attr("src", src_tmp).removeAttr("data-src");
+                img.attr("src", "//images.weserv.nl/?url=" + src).removeAttr("data-src");
+                // var cur_host = getHostName(src);
+                // var src_tmp = src.replace(cur_host, "cdn.sina.moujishu.com");
+                // src_tmp = src_tmp.replace("https://", "//");
+                // img.attr("src", src_tmp).removeAttr("data-src");
             }
         }
     });
