@@ -6,7 +6,7 @@ window.img_array_view = new Array();
 //     $(this).attr("src", "/images/no_img.png");
 // });
 $("img").on('error', function () {
-    $(this).attr("src", "https://p26.toutiaoimg.com/origin/pgc-image/1c8ee9086fb54f68894ab63f8251f258");
+    $(this).attr("src", "https://pic.imgdb.cn/item/6191c4042ab3f51d9105dfde.png");
 });
 
 hotlinkview("wechat-view");
