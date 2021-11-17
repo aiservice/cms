@@ -35,17 +35,12 @@ $(document).ready(function () {
 function hotlinkview(cls) {
     $("img", "." + cls).each(function () {
         var img = $(this);
-        var wd = $("." + cls).width();
         var src = img.attr("src");
         if (!src) {
             src = img.attr("data-original");
         }
-        if (src) {
-            if (src.indexOf("mmbiz.") !== -1) {
-                img.attr("src", "//images.weserv.nl/?url=" + src);
-            } else if (src.indexOf("sinaimg.cn") !== -1) {
-                img.attr("src", "//images.weserv.nl/?url=" + src).removeAttr("data-src");
-            }
+        if (src && src.indexOf("mmbiz.") !== -1 || src.indexOf("sinaimg.cn") !== -1) {
+            img.attr("data-original", "//images.weserv.nl/?url=" + src).removeAttr("src");
         }
     });
 }

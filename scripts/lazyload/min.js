@@ -10,7 +10,7 @@ $(document).ready(function () {
         // if(img.attr("referrerPolicy") !== "no-referrer"){
         //     img.attr("referrerPolicy", "no-referrer");
         // }
-        if (src && src.indexOf("mmbiz.") === -1 && src.indexOf("data:image") === -1) {
+        if (src && src.indexOf("data:image") === -1) {
             img.attr("data-original",src);
             img.removeAttr("src");
         }
