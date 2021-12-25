@@ -9,39 +9,35 @@ $("img").on('error', function () {
     $(this).attr("src", "https://pic.imgdb.cn/item/6191c4042ab3f51d9105dfde.png");
 });
 
-hotlinkview("wechat-view");
+hotlinkview("#mycontent");
 
 $(document).ready(function () {
     goTop();
-    var rankConfig = {};
-    rankConfig.TIMER_Clothing = null;
-    $("li", ".ranking").mouseover(function () {
-        var $this = $(this);
-        rankConfig.TIMER_Clothing = setTimeout(function () {
-            $this.addClass("cur").siblings().removeClass("cur");
-        }, 200);
-        return false
-    }).mouseout(function () {
-        if (rankConfig.TIMER_Clothing) {
-            clearTimeout(rankConfig.TIMER_Clothing);
-        }
+    $("img", "#mycontent").lazyload({
+        threshold: 200,
+        effect: "fadeIn"
     });
-    if (typeof cur_location_url != "undefined" && cur_location_url.indexOf("wuxia") !== -1 && cur_location_url.indexOf("index.html") !== -1) {
-        var tip_html = '<div class="alert alert-danger" role="alert" style="margin-top: 10px;margin-bottom: 0;"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>  Sorry we don\'t support novel reading now. </div>';
-        $("#carousel_aiisen").after(tip_html);
-    }
+    // $("img.lazy").lazyload({
+    //     threshold: 200,
+    //     effect: "fadeIn"
+    // });
 });
 
 function hotlinkview(cls) {
-    $("img", "." + cls).each(function () {
+    $("img", cls).each(function () {
         var img = $(this);
         var src = img.attr("src");
-        if (!src) {
-            src = img.attr("data-original");
+        img.attr("referrerPolicy", "no-referrer").removeAttr("src");
+        if (src) {
+            img.attr("data-original", src);
         }
-        if (src && src.indexOf("mmbiz.") !== -1 || src.indexOf("sinaimg.cn") !== -1) {
-            img.attr("data-original", "//images.weserv.nl/?url=" + src).removeAttr("src");
+        var data_src = img.attr("data-src");
+        if (data_src) {
+            img.attr("data-original", data_src);
         }
+        // if (src && src.indexOf("mmbiz.") !== -1 || src.indexOf("sinaimg.cn") !== -1) {
+        //     // img.attr("data-original", "//images.weserv.nl/?url=" + src).removeAttr("src");
+        // }
     });
 }
 
