@@ -7,7 +7,7 @@ function updateViewCount() {
         return;
     }
     var $content = $("#mycontent");
-    $.post("/api/cms/updateViewCount", {"id": $content.data("id"), "mid": $content.data("mid")}, function (result) {
+    $.post("/api/cms/updateViewCount", {"id": $content.data("id"), "title": $(".article-title").text(), "mid": $content.data("mid")}, function (result) {
         console.log(result)
         if (result.code === 0) {
             var datas = result.data;
