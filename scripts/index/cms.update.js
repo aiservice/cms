@@ -6,7 +6,8 @@ function updateViewCount() {
     if (isBot()) {
         return;
     }
-    $.post("/api/cms/updateViewCount", {"id": $("#mycontent").data("id")}, function (result) {
+    var $content = $("#mycontent");
+    $.post("/api/cms/updateViewCount", {"id": $content.data("id"), "mid": $content.data("mid")}, function (result) {
         console.log(result)
         if (result.code === 0) {
             var datas = result.data;
